@@ -9,6 +9,19 @@ class Rating extends React.Component {
       increasing: false,
       decreasing: false
     };
+  // debugger
+  // this.props = {rating: 0}
+  // console.error(props, this.state, this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // console.log(nextProps, "nextProps") --- nextProps are current rating +/- 1
+    // console.log(this.props, "this.props") --- this.props are current rating
+    // console.error(nextProps.rating > this.props.rating, "nextProps.rating > this.props")
+    this.setState({
+      increasing: nextProps.rating > this.props.rating,
+      decreasing: nextProps.rating < this.props.rating
+    })
   }
 
   render() {

@@ -13,6 +13,8 @@ class Survey extends React.Component {
     this.state = {
       rating: 0
     };
+    // debugger
+    // this.props = {}
   }
 
   increaseRating = () => {
